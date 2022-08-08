@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro cachorro</title>
+</head>
+<body>
+	<nav>
+        <ul>
+            <li><a th:href="@{/}">home</a></li>
+            <li> <a th:href="@{/consultacachorro}">consulta cachorro</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Cadastro</h1>
+    
+    <form th:action="@{/cadastrocachorro}" method="post" style="display: flex; flex-direction: column; width: 40%; gap: 1em;">
+        
+        <label for="idraca">Raça</label>
+        <input id="idraca" type="text" placeholder="Informe raca" name="raca">
+
+        <label for="idgrupo">Grupo</label>
+        <input id="idgrupo" type="text" placeholder="Informe grupo" name="grupo">
+        
+        <label for="idgrupo">Altura</label>
+        <input id="idgrupo" type="text" placeholder="Informe altura" name="altura">
+
+        <label for="idemailtutor">Email do tutor</label>
+        <input id="idemailtutor" type="text" placeholder="Informe email do tutor" name="emailtutor">
+
+        <button>Cadastrar cachorro</button>
+        
+    </form>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap');
+
+        *{
+            box-sizing: borderbox;
+            text-decoration: none;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; 
+            font-family: 'Comfortaa', cursive;
+            color:blueviolet;
+            background-color: rgb(255, 255, 241);
+            
+        }
+
+        h1 {
+            padding-left: 1.4em;
+            color:blueviolet;
+            margin-bottom: .5em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; 
+            width: 40%; 
+            gap: 1em;
+            margin: 0 auto;
+        }
+        nav ul{
+            display: flex;
+            background-color: blueviolet;
+            height: 50px;
+            align-items: center;
+            padding-inline: 3em;
+            gap: 3em;
+            margin-bottom: 3em;
+            color: wheat;
+            font-weight: 700;      
+        }
+        
+        nav ul a {
+		color: wheat;
+		}
+
+        label {
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        input {
+            font-size: 16px;
+            font-size: max(16px, 1em);
+            font-family: inherit;
+            padding: 0.25em 0.5em;
+            background-color: #fff;
+            border: 2px solid var(--input-border);
+            border-radius: 18px;
+            background-color: rgb(234, 213, 253);
+            padding: .6em;
+        }
+        input::placeholder {
+            padding-left: 1em;
+        }
+        button {
+            font-family: inherit;
+            font-weight: 900;
+            text-transform: uppercase;
+            top:50%;
+            background-color:blueviolet;
+            color: wheat;
+            border:none; 
+            border-radius:18px; 
+            padding:15px;
+            width: 15em;
+            align-self: center;
+        }
+
+    </style>
+    
+</body>
+</html>

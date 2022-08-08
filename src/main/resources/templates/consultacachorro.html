@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta cachorro</title>
+</head>
+<body>
+	<nav>
+        <ul>
+            <li><a th:href="@{/}">home</a></li>
+            <li> <a th:href="@{/cadastrocachorro}">cadastro cachorro</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Consulta cachorro</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Raça</th>
+                <th>Grupo</th>
+                <th>Altura</th>
+                <th>Email do Tutor</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cachorro: ${cachorros}">
+                <td th:text="*{cachorro.id}"></td>
+                <td th:text="*{cachorro.raca}"></td>
+                <td th:text="*{cachorro.grupo}"></td>
+                <td th:text="*{cachorro.altura}"></td>  
+                <td th:text="*{cachorro.emailtutor}"></td>
+                <td><a th:href="@{'/consultacachorro/'+ ${cachorro.id}}">editar</a></td>
+                <td><a th:href="@{'/deletec/'+ ${cachorro.id}}">excluir</a></td>              
+            </tr>
+        </tbody>
+    </table>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap');
+
+        *{
+            box-sizing: borderbox;
+            text-decoration: none;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; 
+            font-family: 'Comfortaa', cursive;
+            color:blueviolet;
+            background-color: rgb(255, 255, 241);
+            
+        }
+
+        h1 {
+            padding-left: 1.4em;
+            color:blueviolet;
+            margin-bottom: .5em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; 
+            width: 40%; 
+            gap: 1em;
+            margin: 0 auto;
+        }
+        nav ul{
+            display: flex;
+            background-color: blueviolet;
+            height: 50px;
+            align-items: center;
+            padding-inline: 3em;
+            gap: 3em;
+            margin-bottom: 3em;
+            color: wheat;
+            font-weight: 700;      
+        }
+        
+        nav ul a {
+		color: wheat;
+		}
+
+
+		/* Table Style */
+		table {
+		  color: blueviolet;
+		  background: rgb(234, 213, 253);
+		  border: 1px solid  rgb(255, 255, 241);
+		  font-size: 12pt;
+		  border-collapse: collapse;
+		  width: 80vw;
+		  margin: 3em auto;
+		}
+		
+		table a{
+			text-decoration: underline;
+		}
+		
+		table td a::hover {
+			font-style: italic;
+		}
+		
+		table thead th,
+		table tfoot th {
+		  color: wheat;
+		  background: blueviolet;
+		}
+		
+		table th,
+		table td {
+		  padding: .7em;
+		  border: 2px solid rgb(255, 255, 241);
+		}	
+		
+        button {
+            font-family: inherit;
+            font-weight: 900;
+            text-transform: uppercase;
+            top:50%;
+            background-color:blueviolet;
+            color: wheat;
+            border:none; 
+            border-radius:18px; 
+            padding:15px;
+            width: 15em;
+            align-self: center;
+        }
+
+    </style>
+    
+</body>
+</html>
